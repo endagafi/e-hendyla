@@ -12,10 +12,10 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('firstname') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">First name</label>
+                            <label for="name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" placeholder="First name..." required autofocus>
+                                <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" placeholder="Nombre..." required autofocus>
 
                                 @if ($errors->has('firstname'))
                                     <span class="help-block">
@@ -25,10 +25,10 @@
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Last name</label>
+                            <label for="name" class="col-md-4 control-label">Apellido</label>
 
                             <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" placeholder="Last name ..." required>
+                                <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" placeholder="Apellido ..." required>
 
                                 @if ($errors->has('lastname'))
                                     <span class="help-block">
@@ -39,10 +39,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                            <label for="phone" class="col-md-4 control-label">Phone</label>
+                            <label for="phone" class="col-md-4 control-label">Telefono</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Phone ..." required>
+                                <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Telefono ..." required>
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Confirmar Password</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Re-enter password ..." required>

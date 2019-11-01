@@ -89,9 +89,9 @@
       </div>
       <div class="modal-body">
       <?php $details = $product->maxBidDetails()->user(); ?>
-        <b>Names</b>: {{$details->firstname. ' ' . $details->lastname}}<br>
+        <b>Nombre</b>: {{$details->firstname. ' ' . $details->lastname}}<br>
         <b>Email</b>: {{$details->email}}<br>
-        <b>Phone</b>: {{$details->phone}}<br>
+        <b>Telefono</b>: {{$details->phone}}<br>
       </div>
       <div class="modal-footer">
         <p>Use the above details to contact the top bidder to proceed with payment process</p>
