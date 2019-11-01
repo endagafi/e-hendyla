@@ -15,9 +15,9 @@
   <div class="col-md-8">
     <h4 class="media-heading"><a href="{{route('soldDetails',$product->id)}}">{{$product->product_name}}</a></h4>
     <b>Termina en</b>: {!!$product->endDate()!!}<br>
-    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Precio</b>: Gs{{$product->minimal_price}}<br>
     @if($product->maxBid())
-      <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
+      <b>Highest bid: </b><u><b>Gs{{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
     @else
     <b class="text-muted">No bid yet</b><br>

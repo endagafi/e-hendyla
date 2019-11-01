@@ -14,30 +14,30 @@
   <div class="col-md-8 col-sm-6">
     <h4 class="media-heading">{{$product->product_name}}</h4>
     <b>Termina</b> {!! $product->endDate() !!}<br>
-    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Precio</b>: Gs{{$product->minimal_price}}<br>
     @if($product->maxBid())
-      <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
+      <b>Highest bid: </b><u><b>Gs{{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
     @else
     <b class="text-muted">No bid yet</b><br>
     @endif
-    {!! ($product->hasBidden())?'<b>Your bid</b>: Rwf '.$product->userBid()->price.'<br>':'' !!}
+    {!! ($product->hasBidden())?'<b>Your bid</b>: Gs'.$product->userBid()->price.'<br>':'' !!}
     <br>
     <b>Descripcion: </b><p>{{$product->description}}</p><br>
     <form method="post" action="{{ route('bidProduct',$product->id) }}" role="form" class="form-horizontal sell-form col-md-11 col-md-offset-1">
       {{csrf_field()}}
-    <h4 class="text-center">Bid this product</h4>
+    <h4 class="text-center">Comprar</h4>
     <hr>
     @if($product->hasBidden())
-    <b class="text-info h4"><span class="ion-ios-information-outline"></span> &nbsp;Previous bid on this product:<b> Rwf {{$product->userBid()->price}}</b></b><br><br>
+    <b class="text-info h4"><span class="ion-ios-information-outline"></span> &nbsp;Previous bid on this product:<b> Gs{{$product->userBid()->price}}</b></b><br><br>
     @endif
-    <p class="text-muted">Minimum price to bid is <b>Rwf {{($product->isBidden())?$product->maxBid()+10:$product->minimal_price}}</b></p>
+    <p class="text-muted">Minimum price to bid is <b>Gs{{($product->isBidden())?$product->maxBid()+10:$product->minimal_price}}</b></p>
     {!! (session()->has('message'))?'<b class="text-success h5">'.session()->get('message').'</b><br><br>':''!!}
     {!! (session()->has('errors'))?'<b class="text-danger h5">'.session()->get('errors')->first().'</b><br><br>':''!!}
     <br>
       <div class="form-group">
         <div class="col-md-4">Your price</div>
-        <div class="col-md-8"><input type="number" name="price" value="{{($product->isBidden())?$product->maxBid()+10:$product->minimal_price}}"class="form-control" placeholder="Enter your bid price (in Rwf)..."/></div>
+        <div class="col-md-8"><input type="number" name="price" value="{{($product->isBidden())?$product->maxBid()+10:$product->minimal_price}}"class="form-control" placeholder="Enter your bid price (in Gs)..."/></div>
       </div>
 
       <div class="form-group text-center">

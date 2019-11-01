@@ -14,14 +14,14 @@
   <div class="col-md-8 col-sm-12">
     <h4 class="media-heading">{{$product->product_name}}</h4>
     <b>End on</b> {!! $product->endDate() !!}<br>
-    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Precio</b>: Gs{{$product->minimal_price}}<br>
     @if($product->maxBid())
-      <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
+      <b>Highest bid: </b><u><b>Gs{{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
     @else
     <b class="text-muted">No bid yet</b><br>
     @endif
-    {!! ($product->hasBidden())?'<b>Your bid</b>: Rwf '.$product->userBid()->price.'<br>':'' !!}
+    {!! ($product->hasBidden())?'<b>Your bid</b>: Gs'.$product->userBid()->price.'<br>':'' !!}
     <b>Status</b>: {{($product->approved)?'Proved':'Pending'}}  
     {!! ($product->sold || $product->isEnded())?' | <span class="badge badge-danger">Auction closed</span>':'' !!}
     <br>
@@ -66,7 +66,7 @@
         <tr {!!($product->maxBid()==$bid->price)?'class="success" style="border-left:5px solid green;"':''!!}  {!! ($product->isBidden() && $product->sold)?'data-toggle="modal" data-target=".contactDetails" id="pointer"':''!!}>
             <td>{{$a}}</td>
             <td>{{$bid->user()->firstname.' '.$bid->user()->lastname}}</td>
-            <td>Rwf {{$bid->price}}</td>
+            <td>Gs{{$bid->price}}</td>
             <td>{!!$bid->date()!!}</td>
             
         </tr>

@@ -15,14 +15,14 @@
   <div class="col-md-8">
     <h4 class="media-heading">{{$product->product_name}}</h4>
     <b>Termina</b> {!!$product->endDate()!!}<br>
-    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Precio</b>: Gs{{$product->minimal_price}}<br>
     @if($product->maxBid())
-      <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
+      <b>Highest bid: </b><u><b>Gs{{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
     @else
     <b class="text-muted">Disponible</b><br>
     @endif
-    {!! ($product->hasBidden())?'<b>Your bid</b>: Rwf '.$product->userBid()->price.'<br>':'' !!}
+    {!! ($product->hasBidden())?'<b>Your bid</b>: Gs'.$product->userBid()->price.'<br>':'' !!}
     <br>
     <b>Descripcion: </b><p>{{$product->description}}</p><br>
     <a href="{{route('buyProduct',$product->id)}}"><button class="btn btn-primary btn-xs">{{($product->hasBidden())?'Rebid':'Bid'}} this product</button></a>

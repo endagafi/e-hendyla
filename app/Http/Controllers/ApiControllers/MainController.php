@@ -21,9 +21,9 @@ class MainController extends Controller
     		$singleProductDetails['picture']=asset('img/products/'.$singleProductDetails['picture']);
     		$singleProductDetails['end_date_time']=date('dS M Y \a\t h:i A',strtotime($singleProductDetails['end_date_time']));
     		$singleProductDetails['bids_no']=$product->bidsCount().' '.str_plural('time',$product->bidsCount());
-    		$singleProductDetails['minimal_price']='Rwf '.$product->minimal_price;
-    		$singleProductDetails['high_price']='Rwf '.$product->highestBid();
-            $singleProductDetails['bid_price']=$product->isBidden()?'Rwf '.$product->bidPrice():$singleProductDetails['minimal_price'];
+    		$singleProductDetails['minimal_price']='Gs  '.$product->minimal_price;
+    		$singleProductDetails['high_price']='Gs  '.$product->highestBid();
+            $singleProductDetails['bid_price']=$product->isBidden()?'Gs  '.$product->bidPrice():$singleProductDetails['minimal_price'];
             $singleProductDetails['is_bidden']=$product->isBidden()?true:false;
     		$productsArray[]=$singleProductDetails;
     	}
@@ -36,9 +36,9 @@ class MainController extends Controller
     	$product['picture']=asset('img/products/'.$product['picture']);
     	$product['end_date_time']=date('dS M Y \a\t h:i A',strtotime($product['end_date_time']));
     	$product['bids_no']=$productObj->bidsCount().' '.str_plural('time',$productObj->bidsCount());
-    	$product['minimal_price']='Rwf '.$productObj->minimal_price;
-    	$product['high_price']='Rwf '.$productObj->highestBid();
-        $product['bid_price']=$productObj->isBidden()?'Rwf '.$productObj->bidPrice():$product['minimal_price'];
+    	$product['minimal_price']='Gs  '.$productObj->minimal_price;
+    	$product['high_price']='Gs  '.$productObj->highestBid();
+        $product['bid_price']=$productObj->isBidden()?'Gs  '.$productObj->bidPrice():$product['minimal_price'];
         $product['is_bidden']=$productObj->isBidden()?true:false;
         return Response()->json($product);
     }
@@ -52,9 +52,9 @@ class MainController extends Controller
             $singleProductDetails['picture']=asset('img/products/'.$singleProductDetails['picture']);
             $singleProductDetails['end_date_time']=date('dS M Y \a\t h:i A',strtotime($singleProductDetails['end_date_time']));
             $singleProductDetails['bids_no']=$product->bidsCount().' '.str_plural('time',$product->bidsCount());
-            $singleProductDetails['minimal_price']='Rwf '.$product->minimal_price;
-            $singleProductDetails['high_price']='Rwf '.$product->highestBid();
-            $singleProductDetails['bid_price']=$product->isBidden()?'Rwf '.$product->bidPrice():$singleProductDetails['minimal_price'];
+            $singleProductDetails['minimal_price']='Gs  '.$product->minimal_price;
+            $singleProductDetails['high_price']='Gs  '.$product->highestBid();
+            $singleProductDetails['bid_price']=$product->isBidden()?'Gs  '.$product->bidPrice():$singleProductDetails['minimal_price'];
             $singleProductDetails['is_bidden']=$product->isBidden()?true:false;
             $singleProductDetails['is_ended']=$product->isEnded()?true:false;
             $singleProductDetails['high_bid_user']=($product->maxBidDetails())?$product->maxBidDetails()->user():false;

@@ -7,9 +7,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading panel-main-menus">
                     <ul class="nav nav-pills">
-                        <li {!! (Route::currentRouteName()=='sell')?'class="active"':'' !!}><a href="{{url('sell')}}">Sell a product</a></li>
-                        <li {!! (Route::currentRouteName()=='sold' || Route::currentRouteName()=='soldDetails')?'class="active"':'' !!}><a href="{{url('soldproducts')}}">Your auctions</a></li>
-                        <li {!! (Route::currentRouteName()=='buy' || Route::currentRouteName()=='buyProduct')?'class="active"':'' !!}><a href="{{route('buy')}}">Buy (Bid)</a></li>
+                        <li {!! (Route::currentRouteName()=='sell')?'class="active"':'' !!}><a href="{{url('sell')}}">Vender un Producto</a></li>
+                        <li {!! (Route::currentRouteName()=='sold' || Route::currentRouteName()=='soldDetails')?'class="active"':'' !!}><a href="{{url('soldproducts')}}">Tus ventas</a></li>
+                        <li {!! (Route::currentRouteName()=='buy' || Route::currentRouteName()=='buyProduct')?'class="active"':'' !!}><a href="{{route('buy')}}">Comprar</a></li>
                       
                       {{--<li role="presentation"><a href="#">Messages</a></li>--}}
                     </ul>

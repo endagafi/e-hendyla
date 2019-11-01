@@ -35,7 +35,7 @@
         <div class="form-group{{ $errors->has('auctionEndTime') ? ' has-error' : '' }}">
             <label for="auctionEndTime" class="col-md-3 control-label">Terminar oferta</label>
             <div class="col-md-8{{ $errors->has('auctionEndTime') ? ' has-error' : '' }}">
-                <input id="auctionEndTime" type='text' class="form-control" name="auctionEndTime" placeholder="Fecha autocomplete="off" />
+                <input id="auctionEndTime" type='text' class="form-control" name="auctionEndTime" placeholder="Fecha" autocomplete="off" />
 
                 @if ($errors->has('auctionEndTime'))
                     <span class="help-block">
