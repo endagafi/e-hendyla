@@ -24,7 +24,7 @@ class AuthController extends Controller
             return response()->json(
                 [
                     'status' => 'error',
-                    'message' => 'Please provide correct details',
+                    'message' => 'Escribi bien gil',
                     'errors' => $validate->errors()
                 ],
                 400
@@ -39,7 +39,7 @@ class AuthController extends Controller
 	        ]);
         return response()->json([
             'status' => 'success',
-            'message' => 'You have successfully registered'
+            'message' => 'Te has registrado correctamente'
         ]);
     }
 
@@ -57,7 +57,7 @@ class AuthController extends Controller
             return response()->json(
                 [
                     'status' => 'error',
-                    'message' => 'Please provide correct details',
+                    'message' => 'Provea datos validos',
                     'errors' => $validate->errors()
                 ],
                 400
@@ -68,7 +68,7 @@ class AuthController extends Controller
             return response()->json(
                 [
                     'status' => 'error',
-                    'message' => 'Invalid email or password'
+                    'message' => 'Email o Password invalido'
                 ],
                 401
             );
@@ -78,7 +78,7 @@ class AuthController extends Controller
         $userDetails = $user->get(['firstname', 'lastname', 'email'])->first()->toArray();
         return response()->json([
             'status' => 'success',
-            'message' => 'You have successfully logged in',
+            'message' => 'Logeado',
             'user' => $userDetails,
             'access_token' => $token->accessToken,
             'expires_at' => $token->token->expires_at
@@ -96,7 +96,7 @@ class AuthController extends Controller
         }
         return response()->json([
             'status' => 'success',
-            'message' => 'You have successfully logged out'
+            'message' => 'Logged out'
         ]);
     }
 }

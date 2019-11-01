@@ -14,7 +14,7 @@
   <div class="col-md-8 col-sm-12">
     <h4 class="media-heading">{{$product->product_name}}</h4>
     <b>End on</b> {!! $product->endDate() !!}<br>
-    <b>Initial price</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
     @if($product->maxBid())
       <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>

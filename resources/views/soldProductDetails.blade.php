@@ -13,8 +13,8 @@
   </div>
   <div class="col-md-8 col-sm-6">
     <h4 class="media-heading">{{$product->product_name}}</h4>
-    <b>End on</b> {!! $product->endDate() !!}<br>
-    <b>Initial price</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Termina</b> {!! $product->endDate() !!}<br>
+    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
     @if($product->maxBid())
       <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
@@ -23,7 +23,7 @@
     @endif
     {!! ($product->hasBidden())?'<b>Your bid</b>: Rwf '.$product->userBid()->price.'<br>':'' !!}
     <br>
-    <b>Description: </b><p>{{$product->description}}</p><br>
+    <b>Descripcion: </b><p>{{$product->description}}</p><br>
     <form method="post" action="{{ route('bidProduct',$product->id) }}" role="form" class="form-horizontal sell-form col-md-11 col-md-offset-1">
       {{csrf_field()}}
     <h4 class="text-center">Bid this product</h4>
@@ -47,6 +47,6 @@
   </div>
 </div>
 @else
-<h2 class="text-center">No product found</h2>  
+<h2 class="text-center">No se encontraron Productos</h2>  
 @endif
 @endsection

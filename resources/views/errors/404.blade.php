@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>You lost</title>
+        <title>Tu hermana 404</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
@@ -81,8 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Ooops! <br/>You have been lost my dear.<br/>
-                    <small>Another time</small>
+                    Ooops! <br/>le pifiaste a la url kp.<br/>
+                    <small>Otra vez</small>
                 </div>
                 <div>
                     <h1><a href="https://github.com/muhozi"><i class="fa fa-github"></i></a>&nbsp;&nbsp;&nbsp;<a href="https://twitter.com/EmeryMuhozi"><i class="fa fa-twitter"></i></a></h1>

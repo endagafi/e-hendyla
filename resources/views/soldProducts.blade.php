@@ -14,24 +14,24 @@
   </div>
   <div class="col-md-8">
     <h4 class="media-heading"><a href="{{route('soldDetails',$product->id)}}">{{$product->product_name}}</a></h4>
-    <b>End time</b>: {!!$product->endDate()!!}<br>
-    <b>Initial Price</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Termina en</b>: {!!$product->endDate()!!}<br>
+    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
     @if($product->maxBid())
       <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
     @else
     <b class="text-muted">No bid yet</b><br>
     @endif
-    <b>Status</b>: {{($product->approved)?'Proved':'Pending'}}  
+    <b>Estado</b>: {{($product->approved)?'Proved':'Pending'}}  
     {!! ($product->sold || $product->isEnded())?' | <span class="badge badge-danger">Auction closed</span>':'' !!}
     <br>
     <br>
-    <b>Description: </b><p>{{$product->description}}</p><br>
+    <b>Descripcion: </b><p>{{$product->description}}</p><br>
   </div>
 </div><hr>
 @endforeach
 @else
-<div class="h1 text-center">You have not yet sold any product</div>
-<div class="text-center"><a href="{{route('sell')}}"><button class="btn btn-primary">Start selling   your product</button></a></div>
+<div class="h1 text-center">No tienes productos para vender</div>
+<div class="text-center"><a href="{{route('sell')}}"><button class="btn btn-primary">Empieza a vender</button></a></div>
 @endif
 @endsection

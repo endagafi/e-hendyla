@@ -35,7 +35,7 @@
                     (a==0)?$("#auctions").replaceWith("<h1 class='text-center'>No unproved auction</h2>"):null;
                 }
                 else{
-                    $(button).parent().html("<b class='text-success'>Approved</b>")
+                    $(button).parent().html("<b class='text-success'>Aprovado</b>")
                 }
                 (a==0)?$(".approveAll").remove():null;
             },
@@ -55,10 +55,10 @@
                 alert(data.message);
                 $('#toProve').text('0');
                 if($('#auctions').data('cont')=='unproved'){
-                    $("#auctions").replaceWith("<h1 class='text-center'>No unproved auction</h2>");
+                    $("#auctions").replaceWith("<h1 class='text-center'>Sin weas </h2>");
                 }
                 else{
-                    $('.approve').parent().html("<b class='text-success'>Approved</b>");
+                    $('.approve').parent().html("<b class='text-success'>Aprovado</b>");
                 }
             },
             error:function(data){

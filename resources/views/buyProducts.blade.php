@@ -14,22 +14,22 @@
   </div>
   <div class="col-md-8">
     <h4 class="media-heading">{{$product->product_name}}</h4>
-    <b>End on</b> {!!$product->endDate()!!}<br>
-    <b>Initial price</b>: Rwf {{$product->minimal_price}}<br>
+    <b>Termina</b> {!!$product->endDate()!!}<br>
+    <b>Precio</b>: Rwf {{$product->minimal_price}}<br>
     @if($product->maxBid())
       <b>Highest bid: </b><u><b>Rwf {{$product->maxBid()}}</b></u>&nbsp;&nbsp;|&nbsp;&nbsp; 
       <span class="badge badge-default">{{$product->bidsCount() . '&nbsp;'.str_plural('Bid',$product->bidsCount())}}</span><br>
     @else
-    <b class="text-muted">No bid yet</b><br>
+    <b class="text-muted">Disponible</b><br>
     @endif
     {!! ($product->hasBidden())?'<b>Your bid</b>: Rwf '.$product->userBid()->price.'<br>':'' !!}
     <br>
-    <b>Description: </b><p>{{$product->description}}</p><br>
+    <b>Descripcion: </b><p>{{$product->description}}</p><br>
     <a href="{{route('buyProduct',$product->id)}}"><button class="btn btn-primary btn-xs">{{($product->hasBidden())?'Rebid':'Bid'}} this product</button></a>
   </div>
 </div><hr>
 @endforeach
 @else
-<h2 class="text-center">No product to bid</h2>  
+<h2 class="text-center">No se encontraron productos</h2>  
 @endif
 @endsection

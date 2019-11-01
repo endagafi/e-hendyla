@@ -82,7 +82,7 @@ class MainController extends Controller
             $product->approved = 1;
             $product->description = $request->description;
             $product->save();
-            return Response()->json(['message'=>'Your auction details has been saved','status'=>'success']);
+            return Response()->json(['message'=>'Tu venta ah sido guardada','status'=>'success']);
         }
         else{
             return $all;
@@ -98,7 +98,7 @@ class MainController extends Controller
                 [
                 'price.required' => 'Please enter price to bid this product',
                 'price.numeric' => 'Please enter valid price (must be numeric value)',
-                'price.min' => "Please enter price that is greater \n or equal to Rwf ".$minPrice,
+                'price.min' => "Please enter price that is greater \n or equal to Gs ".$minPrice,
                 ]);
             if ($validate->fails()) {
                 return Response()->json(['status'=>'error','errors'=>$validate->errors()]);
@@ -107,7 +107,7 @@ class MainController extends Controller
                 $prevBid = $product->apiUserBid($request->user()->id);
                 $prevBid->price = $request->input('price');
                 $prevBid->save();
-                return Response()->json(['message'=>'Your rebid has been successfully submitted','status'=>'success']);
+                return Response()->json(['message'=>'Re apuesta','status'=>'success']);
                 
             }
             else{
@@ -116,12 +116,12 @@ class MainController extends Controller
                 $bid->product_id = $id;
                 $bid->price = $request->input('price');
                 $bid->save();
-                return Response()->json(['message'=>'Your bid has been successfully submitted','status'=>'success']);
+                return Response()->json(['message'=>'apuesta enviada','status'=>'success']);
             }
         }
     }
     public function logout(Request $request){
         DB::table('oauth_access_tokens')->where('user_id', '=', $request->user()->id)->update(['revoked' => true]);
-        return Response()->json(['message'=>'You have logged out','status'=>'success']);
+        return Response()->json(['message'=>'logged out','status'=>'success']);
     }
 }

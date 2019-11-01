@@ -20,10 +20,10 @@ class AdminController extends Controller
 			$auction = Auctionproducts::find($id);
 			$auction->approved = 1;
 			$auction->save();
-			return response()->json(['message'=>'The auction have been successfully saved']);
+			return response()->json(['message'=>'La venta se guardo correctamente']);
 	}
 	public function approveall(){
 			$auction = Auctionproducts::where('approved', 0)->update(['approved' => 1]);
-			return response()->json(['message'=>'All auctions have been successfully saved']);
+			return response()->json(['message'=>'Todas las ventas fueron guardadas correctamente']);
 	}
 }

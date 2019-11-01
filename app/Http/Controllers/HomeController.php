@@ -7,7 +7,7 @@ use App\User;
 class HomeController extends Controller
 {
     public function getApp(){
-        return response()->download(public_path('applications/android/Auction.apk'));
+        return response()->download(public_path(''));
     }
     public function home(){
     	return view('home');

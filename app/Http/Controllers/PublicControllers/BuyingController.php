@@ -44,7 +44,7 @@ class BuyingController extends Controller
                 $prevBid = $product->userBid();
                 $prevBid->price = $request->input('price');
                 $prevBid->save();
-                return redirect()->back()->with('message','Your rebid has been successfully submitted');
+                return redirect()->back()->with('message','rebid enviado');
         		
         	}
         	else{
@@ -53,7 +53,7 @@ class BuyingController extends Controller
                 $bid->product_id = $id;
                 $bid->price = $request->input('price');
                 $bid->save();
-                return redirect()->back()->with('message','Your bid has been successfully submitted');
+                return redirect()->back()->with('message','bid enviado');
         	}
         }
         else{
